@@ -143,7 +143,7 @@ class SocketIO {
   }
 
   /// Send a message via a channel (i.e. event)
-  Future<void> sendMessage(String event, dynamic message, [Function callback]) async {
+  Future<void> sendMessage(String event, String message, [Function callback]) async {
     if (event != null && event.isNotEmpty) {
       CallbackFunctions functions = _callbacks[event];
       SocketIOFunction f;
@@ -162,7 +162,7 @@ class SocketIO {
         MethodCallArgumentsName.SOCKET_DOMAIN: _domain,
         MethodCallArgumentsName.SOCKET_NAME_SPACE: _namespace,
         MethodCallArgumentsName.SOCKET_EVENT: event,
-        MethodCallArgumentsName.SOCKET_MESSAGE: message["message"],
+        MethodCallArgumentsName.SOCKET_MESSAGE: message,
         MethodCallArgumentsName.SOCKET_CALLBACK: f == null ? "" : f.functionName
       });
     }
