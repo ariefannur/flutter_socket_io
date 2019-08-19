@@ -162,7 +162,7 @@ class SocketIO {
         MethodCallArgumentsName.SOCKET_DOMAIN: _domain,
         MethodCallArgumentsName.SOCKET_NAME_SPACE: _namespace,
         MethodCallArgumentsName.SOCKET_EVENT: event,
-        MethodCallArgumentsName.SOCKET_MESSAGE: message,
+        MethodCallArgumentsName.SOCKET_MESSAGE: message["message"],
         MethodCallArgumentsName.SOCKET_CALLBACK: f == null ? "" : f.functionName
       });
     }
